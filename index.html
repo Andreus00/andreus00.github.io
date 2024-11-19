@@ -67,6 +67,7 @@
                     (jax, err) => jax.formatError(err)
             }
         };
+        let random = Math.random();
     </script>
     <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -94,6 +95,9 @@
                         <a class="nav-link me-lg-3" href="#page-top">HOME</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="#experience">EXPERIENCE</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#publications">PUBLICATIONS</a>
                     </li>
                     <li class="nav-item">
@@ -106,19 +110,28 @@
     </nav>
 
     <!-- Top Section -->
-    <section class="top-section" style="background-image: url('static/assets/img/background.jpeg');">
+     <!-- if random is < 0.95 show background.jpeg. otherwise show er.png -->    
+    <section id="background-section" class="top-section" style="background-image: url('static/assets/img/background.jpeg');">
         <div class="top-section-content">
             <div class="container px-5">
                 <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt"></h2>
             </div>
         </div>
     </section>
+
+    <script>
+        if (random < 0.8) {
+            document.getElementById("background-section").style = "background-image: url('static/assets/img/background.jpeg');";
+        } else {
+            document.getElementById("background-section").style = "background-image: url('static/assets/img/er.png');"
+        }
+    </script>
     <!-- Top Section -->
 
     <!-- Photo -->
     <div class="container px-5">
         <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.png">
+            <img class="rounded-circle" src="static/assets/img/photo.png">
         </div>
     </div>
     <!-- Photo -->
@@ -134,6 +147,18 @@
         </div>
     </section>
     <!-- Home -->
+
+    <!-- Experience-->
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="experience">
+        <div class="container px-5">
+            <header>
+                <h2 id="experience-subtitle"><i class="bi bi-file-person-fill"></i> EXPERIENCE </h2>
+            </header>
+            <div class="main-body" id="experience-md"></div>
+
+        </div>
+    </section>
+    <!-- Experience-->
 
     <!-- Publications -->
     <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="publications">
@@ -151,7 +176,7 @@
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
         <div class="container px-5">
             <header>
-                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>
+                <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i> AWARDS </h2>
             </header>
             <div class="main-body" id="awards-md"></div>
 
@@ -160,14 +185,17 @@
     <!-- Awards -->
 
 
+
     <!-- Footer-->
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
             <div class="text-white-50 small">
                 <div id="copyright-text" class="mb-2"></div>
-                <a id="github-link" href="https://github.com/senli1073">Github</a>
+                <a id="github-link" href="https://github.com/andreus00">Github</a>
                 <span class="mx-1">&middot;</span>
-                <a id="license-link" href="https://github.com/senli1073/senli1073.github.io/blob/main/LICENSE">License</a>
+                <a id="license-link" href="https://github.com/andreus00/andreus00.github.io/blob/main/LICENSE">License</a>
+                <span class="mx-1">&middot;</span>
+                <a id="template-link" href="https://github.com/senli1073/senli1073.github.io">Template</a>
             </div>
         </div>
     </footer>
