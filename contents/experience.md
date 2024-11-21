@@ -1,5 +1,5 @@
 ### Research
-- Master's thesis on 3D Virtual Try-On in collaboration with the <a href='https://gladia.di.uniroma1.it/' target="_blank"><strong>GLADIA</strong></a> research group.
+- Master's thesis on 3D Virtual Try-On in collaboration with the <a href='https://gladia.di.uniroma1.it/' target="_blank"><strong>GLADIA</strong></a> research group. <a href='https://github.com/Andreus00/Master-Thesis' target='_blank'>link</a>
 
 - Bachelor's thesis on UAV Saliency Detection in collaboration with the <a href='https://visionlab.di.uniroma1.it/' target="_blank"><strong>VISIONLab</strong></a> research group.
 
