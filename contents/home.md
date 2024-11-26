@@ -23,5 +23,5 @@ MS., Computer Science, University of Rome a Sapienza. With Honors.</br>
 BS., Computer Science, University of Rome a Sapienza. With Honors.
 
 ### Research Interests
-Computer Visison applied to Computer Graphics, Geometric Deep Learning, Virtual Humans.
+Computer Vision applied to Computer Graphics, Geometric Deep Learning, Virtual Humans.
 
