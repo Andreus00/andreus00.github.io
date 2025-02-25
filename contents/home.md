@@ -12,11 +12,12 @@
 
 Researcher at the University of Tübingen, Germany, in the Real Virtual Humans group, supervised by Professor Gerard Pons-Moll.
 My interest lies in the intersection between Computer Vision and Computer Graphics, with a focus on Virtual Humans and Geometric Deep Learning.
+Working on Garment Representation, Generation and Reconstruction.
 
 [Download Resume](https://drive.google.com/drive/folders/1fLy_O7DKm2p4y7xU5n-v-9ByQ6QFXrht)
 
 ### Email
-sanchietti.1883210@studenti.uniroma1.it
+andrea.sanchietti@uni-tuebingen.de
 
 ### Education
 MS., Computer Science, University of Rome a Sapienza. With Honors.</br>
