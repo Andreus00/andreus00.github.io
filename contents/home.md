@@ -11,8 +11,10 @@
 </a>
 
 Researcher at the University of Tübingen, Germany, in the Real Virtual Humans group, supervised by Professor Gerard Pons-Moll.
+Member of the IMPRS-IS program, 9th edition.
+
 My interest lies in the intersection between Computer Vision and Computer Graphics, with a focus on Virtual Humans and Geometric Deep Learning.
-Working on Garment Representation, Generation and Reconstruction.
+I'm currently focussing on Garment Representation, Generation and Reconstruction.
 
 [Download Resume](https://drive.google.com/drive/folders/1fLy_O7DKm2p4y7xU5n-v-9ByQ6QFXrht)
 
@@ -24,5 +26,5 @@ MS., Computer Science, University of Rome a Sapienza. With Honors.</br>
 BS., Computer Science, University of Rome a Sapienza. With Honors.
 
 ### Research Interests
-Computer Vision applied to Computer Graphics, Geometric Deep Learning, Virtual Humans.
+Computer Vision, Computer Graphics, Geometric Deep Learning, Virtual Humans.
 
