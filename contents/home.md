@@ -16,8 +16,6 @@ Member of the IMPRS-IS program, 9th edition.
 My interest lies in the intersection between Computer Vision and Computer Graphics, with a focus on Virtual Humans and Geometric Deep Learning.
 I'm currently focussing on Garment Representation, Generation and Reconstruction.
 
-[Download Resume](https://drive.google.com/drive/folders/1fLy_O7DKm2p4y7xU5n-v-9ByQ6QFXrht)
-
 ### Email
 andrea.sanchietti@uni-tuebingen.de
 
