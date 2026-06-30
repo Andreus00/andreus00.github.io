@@ -1,0 +1,144 @@
+[
+  {
+    "id": "rand_32HPKRGITJ",
+    "input": "/assets/editing/meshes/rand_32HPKRGITJ__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_32HPKRGITJ__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_32HPKRGITJ__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_32HPKRGITJ__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_32HPKRGITJ__edit_1__edited.svg",
+        "caption": "Make the skirt longer"
+      }
+    ]
+  },
+  {
+    "id": "rand_8V73NFF9BX",
+    "input": "/assets/editing/meshes/rand_8V73NFF9BX__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_8V73NFF9BX__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_8V73NFF9BX__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_8V73NFF9BX__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_8V73NFF9BX__edit_1__edited.svg",
+        "caption": "Make the sleeves longer"
+      }
+    ]
+  },
+  {
+    "id": "rand_8YNB0R53W4",
+    "input": "/assets/editing/meshes/rand_8YNB0R53W4__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_8YNB0R53W4__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_8YNB0R53W4__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_8YNB0R53W4__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_8YNB0R53W4__edit_1__edited.svg",
+        "caption": "Make the flared skirt longer"
+      }
+    ]
+  },
+  {
+    "id": "rand_CWLQGMPU1F",
+    "input": "/assets/editing/meshes/rand_CWLQGMPU1F__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_CWLQGMPU1F__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_CWLQGMPU1F__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_CWLQGMPU1F__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_CWLQGMPU1F__edit_1__edited.svg",
+        "caption": "Make the pencil skirt less flared"
+      }
+    ]
+  },
+  {
+    "id": "rand_FALK3A0NQL",
+    "input": "/assets/editing/meshes/rand_FALK3A0NQL__input.ply",
+    "edits": [
+      {
+        "id": "edit_3",
+        "edited": "/assets/editing/meshes/rand_FALK3A0NQL__edit_3__edited.ply",
+        "gt": "/assets/editing/meshes/rand_FALK3A0NQL__edit_3__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_FALK3A0NQL__edit_3__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_FALK3A0NQL__edit_3__edited.svg",
+        "caption": "Make the pants shorter and wider, and the sleeves shorter"
+      }
+    ]
+  },
+  {
+    "id": "rand_HPD0IYK3NW",
+    "input": "/assets/editing/meshes/rand_HPD0IYK3NW__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_HPD0IYK3NW__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_HPD0IYK3NW__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_HPD0IYK3NW__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_HPD0IYK3NW__edit_1__edited.svg",
+        "caption": "Shorten the sleeves and widen the cuffs"
+      }
+    ]
+  },
+  {
+    "id": "rand_J4HITRKCZF",
+    "input": "/assets/editing/meshes/rand_J4HITRKCZF__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_J4HITRKCZF__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_J4HITRKCZF__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_J4HITRKCZF__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_J4HITRKCZF__edit_1__edited.svg",
+        "caption": "Make the skirt shorter"
+      }
+    ]
+  },
+  {
+    "id": "rand_W5FYT8LCQC",
+    "input": "/assets/editing/meshes/rand_W5FYT8LCQC__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_W5FYT8LCQC__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_W5FYT8LCQC__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_W5FYT8LCQC__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_W5FYT8LCQC__edit_1__edited.svg",
+        "caption": "Make the pencil skirt shorter"
+      }
+    ]
+  },
+  {
+    "id": "rand_XEKJ4PE2X9",
+    "input": "/assets/editing/meshes/rand_XEKJ4PE2X9__input.ply",
+    "edits": [
+      {
+        "id": "edit_1",
+        "edited": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_1__edited.ply",
+        "gt": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_1__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_1__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_1__edited.svg",
+        "caption": "Make the pants less flared"
+      },
+      {
+        "id": "edit_2",
+        "edited": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_2__edited.ply",
+        "gt": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_2__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_2__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_2__edited.svg",
+        "caption": "Make the pants longer"
+      },
+      {
+        "id": "edit_3",
+        "edited": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_3__edited.ply",
+        "gt": "/assets/editing/meshes/rand_XEKJ4PE2X9__edit_3__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_3__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_XEKJ4PE2X9__edit_3__edited.svg",
+        "caption": "Make the shirt wider"
+      }
+    ]
+  }
+]

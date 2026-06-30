@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PROJECT DESCRIPTION GOES HERE.">
+  <meta name="keywords" content="Stitched Embeddings, 3D Garment, Sewing Patterns, Neural Garments">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stitched Embeddings</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- three.js (vendored locally) for the interactive Editing Results viewers. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./static/js/vendor/three/three.module.js",
+        "three/addons/": "./static/js/vendor/three/addons/"
+      }
+    }
+  </script>
+  <script type="module" src="./static/js/editing_results.js"></script>
+
+  <style>
+    .editing-example {
+      margin-bottom: 0;
+    }
+
+    /* Carousel */
+    .ee-carousel {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ee-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .ee-stage {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .ee-slide {
+      display: none;
+    }
+
+    .ee-slide.is-active {
+      display: block;
+    }
+
+    .ee-title {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #2b2b2b;
+      margin-bottom: .15rem;
+    }
+
+    .ee-sub {
+      text-align: center;
+      font-size: .8rem;
+      color: #b0b0b0;
+      letter-spacing: .02em;
+      margin-bottom: 1rem;
+    }
+
+    .ee-nav {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #dcdce1;
+      background: #fff;
+      color: #4a4a4a;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s, box-shadow .15s;
+    }
+
+    .ee-nav:hover {
+      background: #f5f5f7;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    }
+
+    .ee-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.25rem;
+    }
+
+    .ee-dot {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: #d2d2d8;
+      cursor: pointer;
+      transition: background .15s, transform .15s;
+    }
+
+    .ee-dot:hover {
+      background: #aeaeb6;
+    }
+
+    .ee-dot.is-active {
+      background: #4c78d8;
+      transform: scale(1.25);
+    }
+
+    .editing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: .75rem 1rem;
+      align-items: start;
+    }
+
+    .ev-cell {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ev-view {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #f4f4f6;
+      border-radius: 8px;
+      overflow: hidden;
+      touch-action: none;
+      cursor: grab;
+    }
+
+    .ev-view:active {
+      cursor: grabbing;
+    }
+
+    .ev-caption {
+      text-align: center;
+      font-size: .9rem;
+      margin-top: .45rem;
+      color: #363636;
+    }
+
+    .ev-pattern {
+      background: #ffffff;
+      border: 1px solid #ededed;
+      border-radius: 8px;
+      padding: .6rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ev-pattern img {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
+    }
+
+    .ev-pattern-caption {
+      text-align: center;
+      font-size: .85rem;
+      color: #7a7a7a;
+      margin-top: .4rem;
+    }
+
+    @media (max-width: 768px) {
+      .editing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editing-grid>* {
+        grid-column: 1 / -1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <!-- Optional dropdown for related work / links.
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#">Link 1</a>
+          <a class="navbar-item" href="#">Link 2</a>
+        </div>
+      </div>
+      -->
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Stitched Embeddings: A Unified Latent Space for 3D Garments and 2D
+              Patterns</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://andreus00.github.io/">Andrea Sanchietti</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://ricma.netlify.app/">Riccardo Marin</a><sup>4,5</sup>,</span>
+              <span class="author-block">
+                <a href="https://bharat-b7.github.io/">Bharat Lal Bhatnagar</a><sup>6</sup>,</span>
+              <span class="author-block">
+                <a href="https://yuanluxu.github.io/">Yuanlu Xu</a><sup>6</sup>,</span>
+              <span class="author-block">
+                <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">Gerard
+                  Pons-Moll</a><sup>1,2,3</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Tübingen,</span>
+              <span class="author-block"><sup>2</sup>Tübingen AI Center,</span>
+              <span class="author-block"><sup>3</sup>Max Planck Institute for Informatics,</span>
+              <span class="author-block"><sup>4</sup>Technical University of Munich,</span>
+              <span class="author-block"><sup>5</sup>Munich Center for Machine Learning,</span>
+              <span class="author-block"><sup>6</sup>Meta</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv [Coming Soon]</span>
+                  </a>
+                </span>
+                <!-- TODO: not implemented yet — Video link.
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code [Coming Soon]</span>
+                  </a>
+                </span>
+              </div>
+
+              <div class="venue-logo">
+                <img src="/assets/logos/ECCV_2026_Logo.svg" alt="ECCV" style="height: 200px;">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODO: not implemented yet — teaser video placeholder.
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          One-sentence teaser caption goes here.
+        </h2>
+      </div>
+    </div>
+  </section>
+  -->
+
+
+  <!-- TODO: not implemented yet — results video carousel placeholder.
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-1">
+            <video poster="" id="video1" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sample1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-2">
+            <video poster="" id="video2" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sample2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-3">
+            <video poster="" id="video3" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sample3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              While garments are essential for realistic digital humans, their topological variety makes them much
+              harder to model than parametric bodies. Traditional tailoring relies on 2D sewing patterns, yet bridging
+              these patterns to 3D geometry currently requires physical simulations. We present Stitched Embeddings, the
+              first simulation-free framework to unify 3D garment reconstruction and sewing pattern inference within a
+              single bidirectional latent space. By leveraging the geometric priors of a pretrained 3D foundation model,
+              our approach overcomes the data scarcity typically associated with high-quality garment modeling. We
+              propose to use the Box Mesh as a critical intermediate representation to align 2D panels into 3D
+              configurations without the computational overhead of a simulator. This architecture achieves
+              state-of-the-art accuracy in pattern reconstruction while significantly improving efficiency. Furthermore,
+              our differentiable pipeline enables novel applications, including latent space interpolation, pattern
+              recovery from meshes, and 3D editing from 2D patterns. Finally, this work provides a scalable link between
+              neural 3D vision and the physical garment manufacturing pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- TODO: not implemented yet — paper video placeholder.
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+
+  <!-- TODO: not implemented yet — results / animation / related-links placeholders.
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Section Heading</h2>
+            <p>
+              Describe a result here, alongside a supporting video or image.
+            </p>
+            <video id="left-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/left.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <h2 class="title is-3">Section Heading</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                Describe a second result here.
+              </p>
+              <video id="right-video" controls playsinline height="100%">
+                <source src="./static/videos/right.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Animation</h2>
+
+          <h3 class="title is-4">Interpolating states</h3>
+          <div class="content has-text-justified">
+            <p>
+              Use the slider to interpolate between the start and end frames.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/interpolate_start.jpg" class="interpolation-image"
+                alt="Interpolation start reference image." />
+              <p>Start Frame</p>
+            </div>
+            <div class="column interpolation-video-column">
+              <div id="interpolation-image-wrapper">
+                Loading...
+              </div>
+              <input class="slider is-fullwidth is-large is-info" id="interpolation-slider" step="1" min="0" max="100"
+                value="0" type="range">
+            </div>
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/interpolate_end.jpg" class="interpolation-image"
+                alt="Interpolation end reference image." />
+              <p class="is-bold">End Frame</p>
+            </div>
+          </div>
+          <br />
+
+          <h3 class="title is-4">Subsection Heading</h3>
+          <div class="content has-text-justified">
+            <p>
+              Additional explanation goes here.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video id="replay-video" controls muted preload playsinline width="75%">
+              <source src="./static/videos/replay.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Link related work here.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  -->
+
+
+  <!-- Editing Results. -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+          <h2 class="title is-3">Editing Results</h2>
+          <div class="content has-text-justified" style="max-width: 820px; margin: 0 auto;">
+            <p>
+              For each example we show the <b>initial simulation</b>, the <b>edit at the final
+                step</b>, and the <b>ground-truth simulation</b>, each draped on the body model.
+              Below the 3D views are the corresponding 2D sewing patterns: the initial pattern under
+              the initial simulation, and the edited pattern under the edited and ground-truth
+              results. Drag to rotate and scroll to zoom each view.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="editing-results"></div>
+      <noscript>
+        <p class="has-text-centered has-text-grey">Enable JavaScript to view the interactive 3D
+          editing results.</p>
+      </noscript>
+    </div>
+  </section>
+  <!--/ Editing Results. -->
+
+
+  <!-- Institution logos. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
+        <img src="/assets/logos/Tuebingen_logo_scaled.png" alt="University of Tübingen" style="height: 60px;">
+        <img src="/assets/logos/ai_center_3.png" alt="Tübingen AI Center" style="height: 60px;">
+        <img src="/assets/logos/mpi-logo-new.svg" alt="Max Planck Institute for Informatics" style="height: 60px;">
+        <img src="/assets/logos/IMPRS-IS.png" alt="IMPRS-IS" style="height: 60px;">
+        <img src="/assets/logos/Carl-Zeiss-Stiftung_Logo.png" alt="Carl Zeiss Stiftung" style="height: 60px;">
+      </div>
+    </div>
+  </section>
+  <!--/ Institution logos. -->
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{sanchietti2026stitched,
+  author    = {Sanchietti, Andrea and Marin, Riccardo and Bhatnagar, Bharat Lal and Xu, Yuanlu and Pons-Moll, Gerard},
+  title     = {Stitched Embeddings},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <!-- TODO: not implemented yet — footer PDF / GitHub links.
+      <div class="content has-text-centered">
+        <a class="icon-link" href="#">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="#" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This page is built on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
