@@ -28,6 +28,20 @@
     ]
   },
   {
+    "id": "rand_8V73NFF9BX",
+    "input": "/assets/editing/meshes/rand_8V73NFF9BX__remove_sleeves__input.ply",
+    "edits": [
+      {
+        "id": "remove_sleeves",
+        "edited": "/assets/editing/meshes/rand_8V73NFF9BX__remove_sleeves__edited.ply",
+        "gt": "/assets/editing/meshes/rand_8V73NFF9BX__remove_sleeves__gt.ply",
+        "initialPattern": "/assets/editing/patterns/rand_8V73NFF9BX__remove_sleeves__initial.svg",
+        "editedPattern": "/assets/editing/patterns/rand_8V73NFF9BX__remove_sleeves__edited.svg",
+        "caption": "Remove the sleeves"
+      }
+    ]
+  },
+  {
     "id": "rand_8YNB0R53W4",
     "input": "/assets/editing/meshes/rand_8YNB0R53W4__input.ply",
     "edits": [
