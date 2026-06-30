@@ -109,4 +109,36 @@ section .main-body{
     }
 }
 
+/* Publication teaser with overpic-style overlay labels.
+   In LaTeX overpic the unit is width/100 for both axes, so \put(x,y)
+   maps to  left: x%  and  bottom: (y * width/height)%. */
+#publications-md .fig {
+    position: relative;
+    display: block;
+    margin: 1rem auto 0;
+    line-height: 0;
+    container-type: inline-size;
+}
+
+#publications-md .pub-teaser {
+    max-width: 90%;
+}
+
+#publications-md .fig > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#publications-md .fig .lbl {
+    position: absolute;
+    line-height: 1;
+    font-size: 2cqw;
+    font-weight: 600;
+    color: #1a1a1a;
+    white-space: nowrap;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 4px #fff;
+    pointer-events: none;
+}
+
 
