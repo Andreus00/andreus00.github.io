@@ -204,10 +204,16 @@
     @media (max-width: 768px) {
       .editing-grid {
         grid-template-columns: 1fr;
+        grid-auto-flow: row;
       }
 
+      /* The JS assigns explicit grid-column AND grid-row to every cell for the
+         3-wide desktop layout. On mobile we collapse to one column, so reset
+         both so items flow one-per-row in DOM order instead of piling into the
+         same cell. */
       .editing-grid>* {
-        grid-column: 1 / -1 !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
       }
     }
 

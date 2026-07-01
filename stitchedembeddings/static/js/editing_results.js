@@ -65,6 +65,20 @@ function setupView(v) {
   controls.enablePan = false;
   controls.rotateSpeed = 0.9;
 
+  // Idle auto-rotation; pause while the user is actively interacting and
+  // resume shortly after they let go.
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 1.0;
+  let resumeTimer = null;
+  controls.addEventListener('start', () => {
+    controls.autoRotate = false;
+    if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+  });
+  controls.addEventListener('end', () => {
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { controls.autoRotate = true; }, 2000);
+  });
+
   scene.add(new THREE.HemisphereLight(0xffffff, 0x404048, 1.15));
   const key = new THREE.DirectionalLight(0xffffff, 1.5);
   key.position.set(1, 1.6, 2.2);
@@ -118,6 +132,11 @@ function frameCamera(camera, controls, object) {
   camera.near = Math.max(dist / 100, 0.001);
   camera.far = dist * 100;
   camera.updateProjectionMatrix();
+
+  // Clamp how far the user can zoom in/out, relative to the framing distance.
+  controls.minDistance = dist * 0.45;
+  controls.maxDistance = dist * 2.2;
+
   controls.update();
 }
 
