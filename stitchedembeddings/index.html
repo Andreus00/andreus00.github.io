@@ -388,7 +388,8 @@
     <div class="container is-max-widescreen">
       <div class="hero-body">
         <div class="fig" style="--lblsize: 1.7cqw; max-width: 1200px;">
-          <img src="./static/images/teaser_final.png" alt="Stitched Embeddings teaser: 3D garments, sewing patterns, prediction and editing.">
+          <img src="./static/images/teaser_final.png"
+            alt="Stitched Embeddings teaser: 3D garments, sewing patterns, prediction and editing.">
           <span class="lbl" style="left: 18%; bottom: 96%;">3D Garments</span>
           <span class="lbl" style="left: 18%; bottom: 7%;">Sewing Patterns</span>
           <span class="lbl" style="left: 56%; bottom: 96%;">Input</span>
@@ -465,22 +466,22 @@
           <div class="content has-text-justified">
             <p>
               While garments are essential for realistic digital humans,
-              their topological variety makes them much harder to model than para-
-              metric bodies. Traditional tailoring relies on 2D sewing patterns, yet
-              bridging these patterns to 3D geometry currently requires physical simu-
-              lations. We present Stitched Embeddings, the first simulation-free frame-
-              work to unify 3D garment reconstruction and sewing pattern inference
+              their topological variety makes them much harder to model than parametric
+              bodies. Traditional tailoring relies on 2D sewing patterns, yet
+              bridging these patterns to 3D geometry currently requires physical simulations.
+              We present Stitched Embeddings, the first simulation-free framework to
+              unify 3D garment reconstruction and sewing pattern inference
               within a single bidirectional latent space. By leveraging the geometric
               priors of a pretrained 3D foundation model, our approach overcomes
-              the data scarcity typically associated with high-quality garment mod-
-              eling. We propose to use the BoxMesh as a critical intermediate repre-
-              sentation to align 2D panels into 3D configurations without the com-
-              putational overhead of a simulator. This architecture achieves state-of-
-              the-art accuracy in pattern reconstruction while significantly improving
-              efficiency. Furthermore, our differentiable pipeline enables novel applica-
-              tions, including pattern recovery from meshes and 3D editing from 2D
-              patterns. Finally, this work provides a scalable link between neural 3D
-              vision and the physical garment manufacturing pipeline.
+              the data scarcity typically associated with high-quality garment modeling.
+              We propose to use the BoxMesh as a critical intermediate representation
+              to align 2D panels into 3D configurations without the computational overhead
+              of a simulator. This architecture achieves state-of-the-art accuracy in
+              pattern reconstruction while significantly improving efficiency. Furthermore,
+              our differentiable pipeline enables novel applications, including pattern
+              recovery from meshes and 3D editing from 2D patterns. Finally, this work
+              provides a scalable link between neural 3D vision and the physical garment
+              manufacturing pipeline.
             </p>
           </div>
         </div>
@@ -666,7 +667,8 @@
 
       <h3 class="title is-4 has-text-centered">Pattern recovery from 3D garments</h3>
       <div class="fig" style="max-width: 1000px;">
-        <img src="./static/images/sim-to-sim-v2.png" alt="Autoencoding: recovering 3D garments and sewing patterns from an input mesh.">
+        <img src="./static/images/sim-to-sim-v2.png"
+          alt="Autoencoding: recovering 3D garments and sewing patterns from an input mesh.">
       </div>
       <p class="fig-caption">
         Autoencoding with <b>StEm-Net</b>. The input mesh (left) is mapped by the garment encoder
@@ -679,7 +681,8 @@
 
       <h3 class="title is-4 has-text-centered" style="margin-top: 2.75rem;">3D editing from 2D patterns</h3>
       <div class="fig" style="--lblsize: 1.5cqw; max-width: 1000px;">
-        <img src="./static/images/editing-result_v2.png" alt="Editing examples comparing StEm-Net predictions against ground-truth simulations.">
+        <img src="./static/images/editing-result_v2.png"
+          alt="Editing examples comparing StEm-Net predictions against ground-truth simulations.">
         <span class="lbl" style="left: 9%; bottom: 94%;">Initial Mesh</span>
         <span class="lbl" style="left: 24%; bottom: 94%;"><b>StEm-Net</b></span>
         <span class="lbl" style="left: 41%; bottom: 94%;">GT</span>
