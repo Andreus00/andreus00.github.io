@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="PROJECT DESCRIPTION GOES HERE.">
+  <meta name="description" content="A Unified Latent Space for 3D Garments and 2D Patterns">
   <meta name="keywords" content="Stitched Embeddings, 3D Garment, Sewing Patterns, Neural Garments">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stitched Embeddings</title>
@@ -297,18 +297,6 @@
             <i class="fas fa-home"></i>
           </span>
         </a>
-
-        <!-- Optional dropdown for related work / links.
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="#">Link 1</a>
-          <a class="navbar-item" href="#">Link 2</a>
-        </div>
-      </div>
-      -->
       </div>
 
     </div>
@@ -356,7 +344,6 @@
                     <span>arXiv</span>
                   </a>
                 </span>
-                <!-- Video Link. -->
                 <span class="link-block">
                   <a href="https://youtu.be/CTLE46u5b8w" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -365,7 +352,6 @@
                     <span>Video</span>
                   </a>
                 </span>
-                <!-- Code Link. -->
                 <span class="link-block">
                   <a href="#" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -388,7 +374,6 @@
   </section>
 
 
-  <!-- Teaser. -->
   <section class="hero teaser">
     <div class="container is-max-widescreen">
       <div class="hero-body">
@@ -416,55 +401,10 @@
       </div>
     </div>
   </section>
-  <!--/ Teaser. -->
-
-
-  <!-- TODO: not implemented yet — teaser video placeholder.
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/teaser.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          One-sentence teaser caption goes here.
-        </h2>
-      </div>
-    </div>
-  </section>
-  -->
-
-
-  <!-- TODO: not implemented yet — results video carousel placeholder.
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-1">
-            <video poster="" id="video1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/sample1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-2">
-            <video poster="" id="video2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/sample2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-3">
-            <video poster="" id="video3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/sample3.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
 
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
@@ -491,122 +431,11 @@
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
-
-      <!-- TODO: not implemented yet — paper video placeholder.
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      -->
-    </div>
-  </section>
-
-
-  <!-- TODO: not implemented yet — results / animation / related-links placeholders.
-  <section class="section">
-    <div class="container is-max-desktop">
-
-      <div class="columns is-centered">
-
-        <div class="column">
-          <div class="content">
-            <h2 class="title is-3">Section Heading</h2>
-            <p>
-              Describe a result here, alongside a supporting video or image.
-            </p>
-            <video id="left-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/left.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="column">
-          <h2 class="title is-3">Section Heading</h2>
-          <div class="columns is-centered">
-            <div class="column content">
-              <p>
-                Describe a second result here.
-              </p>
-              <video id="right-video" controls playsinline height="100%">
-                <source src="./static/videos/right.mp4" type="video/mp4">
-              </video>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Animation</h2>
-
-          <h3 class="title is-4">Interpolating states</h3>
-          <div class="content has-text-justified">
-            <p>
-              Use the slider to interpolate between the start and end frames.
-            </p>
-          </div>
-          <div class="columns is-vcentered interpolation-panel">
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_start.jpg" class="interpolation-image"
-                alt="Interpolation start reference image." />
-              <p>Start Frame</p>
-            </div>
-            <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper">
-                Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info" id="interpolation-slider" step="1" min="0" max="100"
-                value="0" type="range">
-            </div>
-            <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_end.jpg" class="interpolation-image"
-                alt="Interpolation end reference image." />
-              <p class="is-bold">End Frame</p>
-            </div>
-          </div>
-          <br />
-
-          <h3 class="title is-4">Subsection Heading</h3>
-          <div class="content has-text-justified">
-            <p>
-              Additional explanation goes here.
-            </p>
-          </div>
-          <div class="content has-text-centered">
-            <video id="replay-video" controls muted preload playsinline width="75%">
-              <source src="./static/videos/replay.mp4" type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Related Links</h2>
-
-          <div class="content has-text-justified">
-            <p>
-              Link related work here.
-            </p>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
-  -->
 
 
-  <!-- Architecture. -->
   <section class="section">
     <div class="container is-max-widescreen">
       <div class="columns is-centered">
@@ -658,10 +487,8 @@
       </p>
     </div>
   </section>
-  <!--/ Architecture. -->
 
 
-  <!-- Applications. -->
   <section class="section">
     <div class="container is-max-widescreen">
       <div class="columns is-centered">
@@ -719,10 +546,8 @@
       </p>
     </div>
   </section>
-  <!--/ Applications. -->
 
 
-  <!-- Editing Results. -->
   <section class="section">
     <div class="container">
       <div class="columns is-centered">
@@ -746,10 +571,8 @@
       </noscript>
     </div>
   </section>
-  <!--/ Editing Results. -->
 
 
-  <!-- Institution logos. -->
   <section class="section">
     <div class="container is-max-desktop">
       <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
@@ -762,7 +585,6 @@
       </div>
     </div>
   </section>
-  <!--/ Institution logos. -->
 
 
   <section class="section" id="BibTeX">
@@ -780,16 +602,6 @@
 
   <footer class="footer">
     <div class="container">
-      <!-- TODO: not implemented yet — footer PDF / GitHub links.
-      <div class="content has-text-centered">
-        <a class="icon-link" href="#">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="#" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      -->
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
